@@ -149,6 +149,12 @@ class PropertyOffer(models.Model):
     property_type_id = fields.Many2one(related='property_id.property_type_id', store=True)
 
 
+    @api.model
+    def create(self, values):
+        property = self.env['realestate.property'].browse(values.get('property_id'))
+        property.state = 'offer_received'
+        return super(PropertyOffer, self).create(values)
+
     @api.depends('validity', 'create_date')
     def _compute_deadline_date(self):
         for offer in self:
