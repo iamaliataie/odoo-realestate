@@ -174,6 +174,7 @@ class PropertyOffer(models.Model):
     def action_accepted(self):
         for rec in self:
             rec.state = 'accepted'
+            rec.property_id.selling_price = rec.price
 
 
     def action_refused(self):

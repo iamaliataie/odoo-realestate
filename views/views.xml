@@ -92,6 +92,28 @@
       </field>
     </record>
 
+    <record id="property_offer_view_form" model="ir.ui.view">
+      <field name="name">realestate.property.offer.view.form</field>
+      <field name="model">realestate.property.offer</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="property_id" attrs="{'readonly': [('state','=', 'accepted')]}" />
+                <field name="price" attrs="{'readonly': [('state','=', 'accepted')]}" />
+                <field name="deadline_date" attrs="{'readonly': [('state','=', 'accepted')]}" />
+              </group>
+              <group>
+                <field name="partner_id" attrs="{'readonly': [('state','=', 'accepted')]}" />
+                <field name="validity" attrs="{'readonly': [('state','=', 'accepted')]}" />
+                <field name="state" invisible="1" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
 
 
     <!-- form view -->
