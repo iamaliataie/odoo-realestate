@@ -199,7 +199,7 @@
         <form>
           <sheet>
             <div class="oe_button_box" name="button_box">
-              <button name="%(property_offer_list_action)d" type="action" class="oe_stat_button" icon="fa-money">
+              <button name="type_offers" type="action" class="oe_stat_button" icon="fa-money">
                 <field name="offers_count" string="Offers" widget="statinfo"/>
               </button>
             </div>
