@@ -152,9 +152,11 @@ class PropertyOffer(models.Model):
     @api.model
     def create(self, values):
         property = self.env['realestate.property'].browse(values.get('property_id'))
-        property.state = 'offer_received'
-        if values.get('price') <= property.best_price:
+        if property.state == 'offer_accepted':
+            raise ValidationError('This property is already sold.')
+        elif values.get('price') <= property.best_price:
             raise ValidationError(f'Only offers greater than {property.best_price} are accepted')
+        property.state = 'offer_received'
         return super(PropertyOffer, self).create(values)
 
     @api.depends('validity', 'create_date')
@@ -175,6 +177,8 @@ class PropertyOffer(models.Model):
         for rec in self:
             rec.state = 'accepted'
             rec.property_id.selling_price = rec.price
+            rec.property_id.best_price = rec.price
+            rec.property_id.state = 'offer_accepted'
 
 
     def action_refused(self):
