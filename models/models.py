@@ -153,6 +153,8 @@ class PropertyOffer(models.Model):
     def create(self, values):
         property = self.env['realestate.property'].browse(values.get('property_id'))
         property.state = 'offer_received'
+        if values.get('price') <= property.best_price:
+            raise ValidationError(f'Only offers greater than {property.best_price} are accepted')
         return super(PropertyOffer, self).create(values)
 
     @api.depends('validity', 'create_date')
