@@ -146,7 +146,6 @@ class PropertyOffer(models.Model):
         ('accepted', 'Accepted'),
         ('rejected', 'Rejected'),
     ], default='')
-
     property_type_id = fields.Many2one(related='property_id.property_type_id', store=True)
 
 
