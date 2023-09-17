@@ -124,8 +124,8 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button string="Cancel" name="action_cancel" type="object" class="oe_highlight"/>
-            <button string="Sold" name="action_sold" type="object" class="oe_highlight"/>
+            <button string="Cancel" name="action_cancel" type="object" class="oe_highlight"  attrs="{'invisible': [('state', 'in', ('sold', 'cancelled'))]}"/>
+            <button string="Sold" name="action_sold" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ('sold', 'cancelled'))]}"/>
             <field name="state"  widget="statusbar"  options="{'clickable': '1'}"/>
           </header>
           <sheet>
