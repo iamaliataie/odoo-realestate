@@ -179,8 +179,8 @@
               </page>
               <page string="Other Info">
                 <group >
-                  <field name="salesman" />
-                  <field name="buyer" />
+                  <field name="salesman" widget="many2one_avatar"/>
+                  <field name="buyer" widget="many2one_avatar"/>
                 </group>
               </page>
             </notebook>
