@@ -231,9 +231,9 @@
             <notebook>
               <page name="Properties" string="Properties">
                 <field name="property_ids">
-                      <tree string="">
-                        <field name="name" />
-                      </tree>
+                  <tree string="">
+                    <field name="name" />
+                  </tree>
                 </field>
               </page>
             </notebook>
