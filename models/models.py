@@ -173,7 +173,6 @@ class PropertyOffer(models.Model):
             else:
                 offer.deadline_date = offer.create_date + timedelta(days=offer.validity) if offer.create_date else False
 
-
     def action_accepted(self):
         for rec in self:
             rec.state = 'accepted'
