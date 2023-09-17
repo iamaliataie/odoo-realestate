@@ -166,7 +166,7 @@
               </page>
               <page string="Offers">
                 <field name="offers_ids">
-                  <tree decoration-success="state == 'accepted'" decoration-danger="state == 'rejected'">
+                  <tree decoration-success="state == 'accepted'" decoration-danger="state == 'rejected'" >
                     <field name="partner_id" />
                     <field name="price" />
                     <field name="deadline_date" />
