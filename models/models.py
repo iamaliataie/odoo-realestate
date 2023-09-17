@@ -165,7 +165,6 @@ class PropertyOffer(models.Model):
         for offer in self:
             offer.deadline_date = offer.create_date + timedelta(days=offer.validity) if offer.create_date else False
 
-
     def _inverse_deadline_date(self):
         for offer in self:
             if offer.deadline_date:
