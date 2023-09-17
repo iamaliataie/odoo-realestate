@@ -100,6 +100,7 @@ class PropertyType(models.Model):
     _description = "realestate.property.type"
 
     name = fields.Char(string='Title')
+    property_ids = fields.One2many('realestate.property', 'property_type_id', string="Properties")
     property_type_offers = fields.One2many('realestate.property.offer', 'property_type_id', string='Type offer')
     offers_count = fields.Integer(compute='_compute_type_offers')
 

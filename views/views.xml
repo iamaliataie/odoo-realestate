@@ -228,7 +228,17 @@
             <group>
               <field name="name" />
             </group>
+            <notebook>
+              <page name="Properties" string="Properties">
+                <field name="property_ids">
+                      <tree string="">
+                        <field name="name" />
+                      </tree>
+                </field>
+              </page>
+            </notebook>
           </sheet>
+
         </form>
       </field>
     </record>
